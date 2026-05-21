@@ -9,3 +9,5 @@ def concatenate(s1: String, s2: String): String
 
 scala> val res = concatenate(s1,s2)
 val res: String = AbhinabPaul
+
+//Worked this out in REPL
