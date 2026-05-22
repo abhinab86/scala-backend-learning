@@ -1,16 +1,16 @@
-sealed trait Notification
+sealed trait Notification              //we use sealed trait when we have limited and fixed no. of options
 
 case class EmailNotification(email: String, msg: String) extends Notification
 case class SMSNotification(phone: String, msg: String) extends Notification
 case class PushNotification(appname: String, msg : String) extends Notification
-case object NoNotification extends Notification
+case object NoNotification extends Notification     //we use case objects when we have no information to store. So it creates a singleton object
 
 object Notify extends App {
   def send (notification: Notification): String = notification match {
     case EmailNotification(e,n) => s"Sending EMAIL to $e : $n"
     case SMSNotification(p,m) => s"Sending SMS to $p: $m"
     case PushNotification(a,m) => s"Sending PUSH notification from $a : $m"
-    case NoNotification => "You have no notifications as of now"
+    case NoNotification => "You have no notifications as of now"  //handles the pattern matching without exhausting and throwing MatchingErrors
   }
 
   val myEmail = EmailNotification("abc123@gmail.com","Welcome!")
