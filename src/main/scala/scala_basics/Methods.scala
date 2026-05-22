@@ -17,7 +17,7 @@
 
 
 object Convert extends App {
-    val fah: Int = 32
+    val fah: Int = -212
     def toCelsius (fahrenheit: Int): Int = (fahrenheit - 32) * 5/9
 
     val res = toCelsius(fah)
